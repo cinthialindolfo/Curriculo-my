@@ -15,9 +15,9 @@ body{
     align-items: center;
 }
 .container{
-    width: 50%;
+    width: 100%;
     overflow-y: scroll;
-    height: 90vh;
+    height: 100vh;
     padding: 15px 2%;
     box-shadow: 0 0 5px #3a6604;
 }
@@ -179,4 +179,17 @@ body{
     -moz-transform: scale(1.5);
     transform: scale(1.5);
     color: #000;
+}
+@media only screen and (max-width: 768px ) {
+    .about {
+        flex-direction: column;
+        align-items: center;
+    }
+    .about .about_left {
+        max-width: 66rem;
+        text-align: center;
+    }
+    .about .about_right {
+        text-align: center;
+    }
 }
