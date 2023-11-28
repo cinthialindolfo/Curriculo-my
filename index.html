@@ -124,6 +124,23 @@
             <i class="fab fa-whatsapp" style="font-size:35px;" target="_blank"></i>
           </a>
         </div>
+        <p>Total de visitas: <span id="contador">0</span></p>
+        <!-- Script para Contador de Visitas -->
+        <script>
+            function atualizarContador() {
+                if (localStorage.getItem('contadorVisitas')) {
+                    var contador = parseInt(localStorage.getItem('contadorVisitas'));
+                } else {
+                    var contador = 0;
+                }
+
+                contador++;
+                document.getElementById('contador').innerText = contador;
+                localStorage.setItem('contadorVisitas', contador);
+            }
+
+            window.onload = atualizarContador;
+        </script>
     </div>
 </body>
 </html>
