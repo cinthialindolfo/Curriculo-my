@@ -69,11 +69,14 @@ p.headline {
     margin: 20px 0 0 0;
 }
 
-/* 2. Resumo */
+/* 2. Resumo/Descrição (LINHA REMOVIDA) */
 p.summary {
     font-size: 1.0em;
     text-align: justify;
+    margin-top: 30px; /* Espaçamento pós-Formação */
     margin-bottom: 30px;
+    /* border-top: 2px solid #333; */ /* REMOVIDA */
+    /* padding-top: 30px; */ /* REMOVIDO */
 }
 
 /* 3. Títulos de Seção (H2) */
@@ -83,11 +86,32 @@ h2 {
     color: #1A237E; /* Azul escuro */
     border-bottom: 2px solid #00796B; /* Verde */
     padding-bottom: 5px;
-    margin-top: 30px;
+    margin-top: 0; /* Margem controlada pela 'section' */
     margin-bottom: 20px;
 }
 
 /* 4. Formação */
+#education h2 {
+    margin-top: 0;
+}
+
+/* Seções (LINHA REMOVIDA) */
+section {
+    /* border-top: 2px solid #333; */ /* REMOVIDA */
+    /* padding-top: 10px; */ /* REMOVIDO */
+    margin-top: 30px; /* Espaço entre seções */
+}
+
+/* Ajuste da primeira seção */
+#education {
+    /* border-top: none; */ /* REMOVIDA */
+    /* padding-top: 0; */ /* REMOVIDO */
+    margin-top: 0; /* Primeira seção não precisa de margem no topo */
+}
+
+
+/* --- Espaçamento dos Itens (Mais Juntos) --- */
+
 .edu-item {
     margin-bottom: 15px;
 }
@@ -163,7 +187,7 @@ h2 {
 /* --- RESPONSIVIDADE --- */
 
 @media (min-width: 601px) {
-    /* Mostra o separador '|' em telas maiores */
+    /* Mostra o separador '|' em telas menores */
     .contact-info .separator {
         display: inline;
         color: #CCC;
