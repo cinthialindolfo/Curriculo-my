@@ -62,31 +62,22 @@ header h1 {
     color: #00796B;
 }
 
-p.headline {
-    font-size: 1.2em;
-    font-weight: 500; /* Peso médio (semi-bold) */
-    color: #1A237E; /* Azul escuro */
-    margin: 20px 0 0 0;
-}
-
-/* 2. Resumo/Descrição (LINHA REMOVIDA) */
-p.summary {
+/* 2. Resumo/Descrição (AJUSTADO) */
+.summary-paragraph {
     font-size: 1.0em;
     text-align: justify;
-    margin-top: 30px; /* Espaçamento pós-Formação */
-    margin-bottom: 30px;
-    /* border-top: 2px solid #333; */ /* REMOVIDA */
-    /* padding-top: 30px; */ /* REMOVIDO */
+    margin-top: 15px; /* Espaço entre o título da função e o parágrafo */
+    margin-bottom: 0;
 }
 
-/* 3. Títulos de Seção (H2) */
+/* 3. Títulos de Seção (H2) (AJUSTADO) */
 h2 {
     font-size: 1.5em;
     font-weight: 700;
     color: #1A237E; /* Azul escuro */
-    border-bottom: 2px solid #00796B; /* Verde */
-    padding-bottom: 5px;
-    margin-top: 0; /* Margem controlada pela 'section' */
+    /* border-bottom: 2px solid #00796B; */ /* LINHA VERDE REMOVIDA */
+    padding-bottom: 0;
+    margin-top: 0; 
     margin-bottom: 20px;
 }
 
@@ -95,22 +86,22 @@ h2 {
     margin-top: 0;
 }
 
-/* Seções (LINHA REMOVIDA) */
+/* Seções (com linha divisória) (AJUSTADO) */
 section {
-    /* border-top: 2px solid #333; */ /* REMOVIDA */
-    /* padding-top: 10px; */ /* REMOVIDO */
+    border-top: 2px solid #333; /* LINHA PRETA ADICIONADA */
+    padding-top: 20px; /* Espaçamento entre a linha e o título H2 */
     margin-top: 30px; /* Espaço entre seções */
 }
 
-/* Ajuste da primeira seção */
+/* Ajuste da primeira seção (AJUSTADO) */
 #education {
-    /* border-top: none; */ /* REMOVIDA */
-    /* padding-top: 0; */ /* REMOVIDO */
-    margin-top: 0; /* Primeira seção não precisa de margem no topo */
+    border-top: none; /* Remove a linha da primeira seção (Formação) */
+    padding-top: 0; 
+    margin-top: 0; 
 }
 
 
-/* --- Espaçamento dos Itens (Mais Juntos) --- */
+/* --- Espaçamento dos Itens --- */
 
 .edu-item {
     margin-bottom: 15px;
@@ -204,10 +195,6 @@ section {
 
     header h1 {
         font-size: 2.0em;
-    }
-
-    p.headline {
-        font-size: 1.1em;
     }
 
     /* Ajusta o cabeçalho do Job no mobile */
