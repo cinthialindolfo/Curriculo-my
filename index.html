@@ -267,33 +267,11 @@
     </section>
 
     <div class="tools-footer no-print">
-        <span class="visitor-counter" title="Contador de visitas (Local)">
-            👁️ Views: <span id="counter">0</span>
-        </span>
+
         <button onclick="window.print()" class="tools-btn">
             🖨️ Baixar em PDF
         </button>
     </div>
-
-    <script>
-        // Script Simples de Contador (Roda no navegador do usuário)
-        document.addEventListener("DOMContentLoaded", function() {
-            // Verifica se já existe contagem salva
-            let views = localStorage.getItem('cv_views');
-            
-            if (!views) {
-                views = 1;
-            } else {
-                views = parseInt(views) + 1;
-            }
-            
-            // Salva o novo valor e atualiza a tela
-            localStorage.setItem('cv_views', views);
-            document.getElementById('counter').innerText = views;
-            
-            console.log('CV visualizado ' + views + ' vezes.');
-        });
-    </script>
 
 </body>
 </html>
