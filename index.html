@@ -2,145 +2,298 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currículo - Cinthia Lindolfo</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* ESTILO GERAL - OTIMIZADO PARA ATS (ROBÔS DE RH) */
+        :root {
+            --primary: #2c3e50;
+            --accent: #2980b9;
+            --text: #333;
+            --bg: #fff;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.5;
+            color: var(--text);
+            background: var(--bg);
+            max-width: 850px; /* Largura padrão A4 */
+            margin: 0 auto;
+            padding: 40px;
+            padding-bottom: 60px; /* Espaço para o rodapé fixo não cobrir o texto */
+        }
+
+        /* HEADER */
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 { font-size: 32px; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }
+        .subtitle { font-size: 18px; color: var(--accent); font-weight: bold; margin: 10px 0; }
+        
+        .contact-info { 
+            font-size: 14px; 
+            display: flex; 
+            justify-content: center; 
+            gap: 15px; 
+            flex-wrap: wrap; 
+        }
+        
+        .contact-info a { color: var(--text); text-decoration: none; }
+        .contact-info a:hover { color: var(--accent); text-decoration: underline; }
+
+        /* SEÇÕES */
+        section { margin-bottom: 25px; }
+        
+        h2 {
+            font-size: 18px;
+            color: var(--primary);
+            text-transform: uppercase;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        /* EXPERIÊNCIA E CONTEÚDO */
+        .job-block { margin-bottom: 20px; }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+        
+        .job-title { font-weight: bold; font-size: 16px; color: #000; }
+        .company { font-style: italic; color: var(--primary); }
+        .date { font-size: 14px; color: #666; font-weight: bold; }
+        
+        ul { list-style-type: disc; margin-left: 20px; }
+        li { margin-bottom: 5px; font-size: 15px; }
+
+        /* SKILLS EM GRID */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .skill-category strong { color: var(--accent); }
+
+        /* RODAPÉ FLUTUANTE DISCRETO (FERRAMENTAS) */
+        .tools-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center; /* Centraliza o conteúdo */
+            align-items: center;
+            gap: 30px;
+            font-size: 12px;
+            color: #6c757d;
+            z-index: 1000;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+        }
+
+        .tools-btn {
+            background: none;
+            border: 1px solid #ced4da;
+            padding: 5px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            color: #495057;
+            font-size: 12px;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .tools-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .visitor-counter {
+            font-family: monospace;
+            background: #e9ecef;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        /* IMPRESSÃO (ESCONDE O QUE NÃO É CURRÍCULO) */
+        @media print {
+            body { padding: 0; max-width: 100%; }
+            a { text-decoration: none; color: #000; }
+            .no-print { display: none !important; }
+            /* Garante que links mostrem o texto limpo */
+            a[href]:after { content: none !important; }
+        }
+    </style>
 </head>
 <body>
-    <main class="container">
-        
-        <header>
-            <h1>Cinthia Lindolfo</h1>
-            
-            <div class="contact-info">
-                <span><i class="fas fa-phone-alt"></i> 83981758363</span>
-                <span class="separator">|</span>
-                <span><i class="fas fa-envelope"></i> cinthia20lindolfo@gmail.com</span>
-                <span class="separator">|</span>
-                <span><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/cinthia-lindolfo" target="_blank">LinkedIn</a></span>
-                <span class="separator">|</span>
-                <span><i class="fas fa-globe"></i> <a href="https://cinthialindolfo-portifolio.netlify.app" target="_blank">Portfólio</a></span>
-            </div>
-            
-            </header>
 
-        <section id="education">
-            <h2>Formação Acadêmica</h2>
-            <div class="edu-item">
-                <p><strong>Bacharelado em Sistemas da Informação</strong> (Agosto 2021 - Presente)</p>
-                <p>Universidade Federal da Paraíba (UFPB)</p>
-            </div>
-            <div class="edu-item">
-                <p><strong>Técnico Subsequente em Eletrônica</strong> (Agosto 2019 - Junho 2022)</p>
-                <p>Instituto Federal da Paraíba (IFPB)</p>
-            </div>
-        </section>
+    <header>
+        <h1>Cinthia Lindolfo</h1>
+        <div class="subtitle">Product Owner | Analista de Requisitos | UX/UI Designer</div>
+        <div class="contact-info">
+            <span>📍 João Pessoa, PB</span>
+            <span>📱 <a href="https://wa.me/5583981758363" target="_blank">(83) 98175-8363</a></span>
+            <span>📧 <a href="mailto:cinthia20lindolfo@gmail.com">cinthia20lindolfo@gmail.com</a></span>
+            <span>🔗 <a href="https://linkedin.com/in/cinthia-lindolfo" target="_blank">LinkedIn</a></span>
+            <span>💻 <a href="https://github.com/cinthialindolfo" target="_blank">GitHub</a></span>
+            <span>🌐 <a href="https://cinthialindolfo-portfolio.netlify.app/" target="_blank">Portfólio</a></span>
+        </div>
+    </header>
 
-        <section id="profile-summary">
-            <h2>Product Owner | Desenvolvedor Web & UX/UI</h2>
-            
-            <p class="summary-paragraph">
-                Como Product Owner, lidero projetos de tecnologia com foco em impacto social e inovação sustentável. Minha responsabilidade central é definir a visão do produto e garantir o alinhamento estratégico entre os objetivos do negócio e as necessidades do cliente-piloto.
-                <br><br>
-                Conduzo o levantamento e a priorização de requisitos (gestão de backlog), elaboro documentação de produto (MRD/PRD) e atuo como principal intermediária com o cliente final. Além disso, coordeno equipes multidisciplinares (design, marketing e desenvolvimento) e auxilio na criação de protótipos, conduzindo processos de validação para garantir o 'Product-Market Fit' e otimizar a usabilidade (UX/UI).
-            </p>
-        </section>
+    <section>
+        <h2>Resumo Profissional</h2>
+        <p>
+            Profissional multidisciplinar graduanda em Sistemas de Informação, atuando na intersecção entre Negócios, Design e Tecnologia. 
+            Minha experiência como Product Owner é sustentada por competências práticas em prototipagem (Figma) e desenvolvimento web (React/Python), permitindo uma visão holística do produto.
+            Versátil e adaptável, busco oportunidades para aplicar metodologias ágeis e visão analítica no desenvolvimento de soluções digitais.
+        </p>
+    </section>
 
-        <section id="skills">
-            <h2>Habilidades</h2>
+    <section>
+        <h2>Competências Técnicas</h2>
+        <div class="skills-grid">
             <div class="skill-category">
-                <h3>Gestão de Produto & UX/UI</h3>
-                <p>Gestão de Produto (Roadmap, Backlog), Documentação de Requisitos (MRD/PRD), UX/UI Design, Prototipação, Validação de Produto (Product-Market Fit).</p>
+                <strong>Gestão & Agilidade:</strong> Product Ownership, Scrum, Kanban, Jira, Trello, Gestão de Backlog, User Stories, Roadmapping.
             </div>
             <div class="skill-category">
-                <h3>Tecnologias & Análise</h3>
-                <p>Web Design, Análise de Dados, Power BI, Estratégias de ODS, Tech for Good.</p>
+                <strong>Design & UX:</strong> Figma (Prototipagem Avançada), Wireframing, User Research, Design Thinking.
             </div>
             <div class="skill-category">
-                <h3>Comportamentais & Liderança</h3>
-                <p>Liderança Colaborativa, Inteligência Emocional, Gestão de Tempo, Comunicação, Liderança Disruptiva, Gestão de Eventos.</p>
+                <strong>Desenvolvimento:</strong> React.js, JavaScript (ES6+), HTML5, CSS3, Git/GitHub, Python (Selenium).
             </div>
-        </section>
+            <div class="skill-category">
+                <strong>Dados:</strong> Power BI, Google Analytics, Excel Avançado, Métricas de Produto (KPIs).
+            </div>
+        </div>
+    </section>
 
-        <section id="experience">
-            <h2>Experiência Profissional e Projetos</h2>
+    <section>
+        <h2>Experiência Profissional</h2>
+
+        <div class="job-block">
+            <div class="job-header">
+                <div><span class="job-title">Product Owner & UX Designer</span> | <span class="company">Projeto BeesCaatinga (Apoio FAPESQ/SECTIES)</span></div>
+                <span class="date">Mai 2025 - Presente</span>
+            </div>
+            <ul>
+                <li>Liderança do ciclo de vida do produto de plataforma ambiental, integrando pesquisadores e devs.</li>
+                <li>Prototipagem de alta fidelidade no <strong>Figma</strong> e mapeamento de jornada do usuário.</li>
+                <li>Gestão de backlog e sprints (Scrum), garantindo entregas alinhadas aos editais de fomento.</li>
+            </ul>
+        </div>
+
+        <div class="job-block">
+            <div class="job-header">
+                <div><span class="job-title">Product Owner</span> | <span class="company">Viveiro de Mudas (PROEX/UFPB)</span></div>
+                <span class="date">Jul 2025 - Presente</span>
+            </div>
+            <ul>
+                <li>Desenvolvimento de solução digital para agricultura familiar com foco em acessibilidade.</li>
+                <li>Condução de discovery e validação de requisitos com stakeholders.</li>
+                <li>Elaboração de documentação técnica (PRD) para time de desenvolvimento.</li>
+                <li>Coordenação de projetos de melhoria contínua com foco em eficiência operacional.</li>
+                <li>Gestão de backlog e sprints (Scrum), garantindo entregas alinhadas aos editais de fomento.</li>
+            </ul>
+        </div>
+
+        <div class="job-block">
+            <div class="job-header">
+                <div><span class="job-title">Gerente Geral & Product Owner</span> | <span class="company">Grupo BRG</span></div>
+                <span class="date">Fev 2024 - Ago 2025</span>
+            </div>
+            <ul>
+                <li>Gestão de equipe multidisciplinar (10+ pessoas) e otimização de processos.</li>
+                <li>Implementação de sistemas internos que reduziram tempo administrativo.</li>
+                <li>Condução de discovery e validação de requisitos com stakeholders.</li>
+                <li>Elaboração de documentação técnica (PRD) para time de desenvolvimento.</li>
+                <li>Coordenação de projetos de melhoria contínua com foco em eficiência operacional.</li>
+                <li>Gestão de backlog e sprints (Scrum), garantindo entregas alinhadas aos editais de fomento.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Projetos Relevantes</h2>
+        <div class="job-block">
+            <div class="job-header">
+                <div><span class="job-title">E-Artesan (Ex-Founder)</span></div>
+                <span class="date">2025</span>
+            </div>
+            <ul>
+                <li>Sistema de gestão de queijos para produtores artesanais (Projeto pré-incubado). Validação de MVP e modelo de negócio.</li>
+                <li>Condução de discovery e validação de requisitos com stakeholders.</li>
+                <li>Elaboração de documentação técnica (PRD) para time de desenvolvimento.</li>
+                <li>Coordenação de projetos de melhoria contínua com foco em eficiência operacional.</li>
+                <li>Gestão de backlog e sprints (Scrum), garantindo entregas alinhadas aos editais de fomento.</li>
+            </ul>
+        </div>
+        <div class="job-block">
+            <div class="job-header">
+                <div><span class="job-title">Bot LinkedIn (Python)</span></div>
+                <span class="date">Projeto Pessoal</span>
+            </div>
+            <ul>
+                <li>Automação de candidaturas utilizando Python e Selenium.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Formação Acadêmica</h2>
+        <div class="job-block">
+            <div class="job-header">
+                <div><span class="job-title">Bacharelado em Sistemas de Informação</span> | <span class="company">UFPB</span></div>
+                <span class="date">Conclusão: Mai 2026</span>
+            </div>
+        </div>
+        <div class="job-block">
+            <div class="job-header">
+                <div><span class="job-title">Técnico em Eletrônica</span> | <span class="company">IFPB</span></div>
+                <span class="date">2019 - 2022</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="tools-footer no-print">
+        <span class="visitor-counter" title="Contador de visitas (Local)">
+            👁️ Views: <span id="counter">0</span>
+        </span>
+        <button onclick="window.print()" class="tools-btn">
+            🖨️ Baixar em PDF
+        </button>
+    </div>
+
+    <script>
+        // Script Simples de Contador (Roda no navegador do usuário)
+        document.addEventListener("DOMContentLoaded", function() {
+            // Verifica se já existe contagem salva
+            let views = localStorage.getItem('cv_views');
             
-            <div class="job">
-                <div class="job-header">
-                    <h3>FAPESQ (Projeto BeesCaatinga) | Product Owner & Web Design</h3>
-                    <span>Maio 2025 - Presente</span>
-                </div>
-                <ul>
-                    <li>Definição e priorização de requisitos alinhados ao cliente-piloto e ao Programa Celso Furtado 2025.</li>
-                    <li>Condução de processos de validação e criação de protótipos para garantir o 'Product-Market Fit'.</li>
-                </ul>
-            </div>
+            if (!views) {
+                views = 1;
+            } else {
+                views = parseInt(views) + 1;
+            }
             
-            <div class="job">
-                <div class="job-header">
-                    <h3>UFPB/PROEX (Projeto Reflora-AE) | Product Owner & Web Design</h3>
-                    <span>Julho 2025 - Presente</span>
-                </div>
-                <ul>
-                    <li>Definição e priorização de requisitos da solução, alinhando o desenvolvimento às necessidades do cliente-piloto.</li>
-                    <li>Auxílio na criação de protótipos, otimização da usabilidade e condução de processos de validação da solução.</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <div class="job-header">
-                    <h3>Grupo BRG | Product Owner (PO) & Gerente Administrativo</h3>
-                    <span>Fevereiro 2024 - Agosto 2025</span>
-                </div>
-                <ul>
-                    <li>Definição da visão do produto, alinhamento com os objetivos do negócio e elaboração de documentos (MRD/PRD).</li>
-                    <li>Coordenação de equipes (back-end, marketing, design) e intermediação principal com o cliente final.</li>
-                    <li>Gerenciamento de processos administrativos, contratos e acompanhamento da eficiência operacional.</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <div class="job-header">
-                    <h3>UFPB/PROEX (Projeto LabDados) | Analista de Dados</h3>
-                    <span>Agosto 2023 - Dezembro 2024</span>
-                </div>
-                <ul>
-                    <li>Atuação em análise de dados no contexto de tecnologia cidadã.</li>
-                    <li>Co-autoria da publicação "Tecnologia Cidadã RT: uma plataforma de análise de dados públicos".</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="development">
-            <h2>Desenvolvimento Profissional</h2>
+            // Salva o novo valor e atualiza a tela
+            localStorage.setItem('cv_views', views);
+            document.getElementById('counter').innerText = views;
             
-            <div class="cert-item">
-                <p><strong>Capacitação Pré-Incubação</strong> (9 meses | 2025)</p>
-                <p>Fundação Parque Tecnológico Horizontes de Inovação - Foco em gestão de negócios, tecnologia, finanças e design.</p>
-            </div>
+            console.log('CV visualizado ' + views + ' vezes.');
+        });
+    </script>
 
-            <div class="cert-item">
-                <p><strong>Desafio Liga Jovem 2025</strong> (5 meses | 2025)</p>
-                <p>Sebrae - Imersão em empreendedorismo tecnológico (50h), com foco em soluções inovadoras e gestão.</p>
-            </div>
-
-            <div class="cert-item">
-                <p><strong>Bootcamp Conect.Al - Deep Tech e IA</strong> (1 mês | 2025)</p>
-                <p>VIRTUS - Imersão técnica em Deep Tech, IA, IoT e Big Data para solução de problemas da indústria.</p>
-            </div>
-
-            <div class="cert-item">
-                <p><strong>Intercâmbio (P@ed)</strong> (1 mês | 2025)</p>
-                <p>Anatel - Imersão sobre Regulação, Inovação (IA) e integração de Sustentabilidade e ODS no setor de telecom.</p>
-            </div>
-
-            <div class="cert-item">
-                <p><strong>Certificações Adicionais:</strong> Inteligência Emocional, FDL (Liderança Disruptiva), Power BI - T01.</p>
-            </div>
-        </section>
-
-    </main>
 </body>
 </html>
