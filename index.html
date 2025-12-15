@@ -2,38 +2,40 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <title>Cinthia Lindolfo - Product Owner</title>
     <style>
-        /* ESTILO GERAL - OTIMIZADO PARA ATS (ROBÔS DE RH) */
+        /* ESTILO GERAL - OTIMIZADO PARA ATS */
         :root {
             --primary: #2c3e50;
             --accent: #2980b9;
             --text: #333;
             --bg: #fff;
+            --light-gray: #f8f9fa;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.5;
+            line-height: 1.6;
             color: var(--text);
             background: var(--bg);
-            max-width: 850px; /* Largura padrão A4 */
+            max-width: 850px;
             margin: 0 auto;
             padding: 40px;
-            padding-bottom: 60px; /* Espaço para o rodapé fixo não cobrir o texto */
+            padding-bottom: 80px;
         }
 
         /* HEADER */
         header {
             text-align: center;
             border-bottom: 2px solid var(--primary);
-            padding-bottom: 20px;
+            padding-bottom: 25px;
             margin-bottom: 30px;
         }
 
-        h1 { font-size: 32px; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }
-        .subtitle { font-size: 18px; color: var(--accent); font-weight: bold; margin: 10px 0; }
+        h1 { font-size: 34px; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+        .subtitle { font-size: 18px; color: var(--accent); font-weight: bold; margin-bottom: 15px; }
         
         .contact-info { 
             font-size: 14px; 
@@ -42,98 +44,115 @@
             gap: 15px; 
             flex-wrap: wrap; 
         }
-        
         .contact-info a { color: var(--text); text-decoration: none; }
         .contact-info a:hover { color: var(--accent); text-decoration: underline; }
 
         /* SEÇÕES */
-        section { margin-bottom: 25px; }
+        section { margin-bottom: 30px; }
         
         h2 {
             font-size: 18px;
             color: var(--primary);
             text-transform: uppercase;
             border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            font-weight: 700;
         }
 
-        /* EXPERIÊNCIA E CONTEÚDO */
-        .job-block { margin-bottom: 20px; }
+        /* HABILIDADES (NOVO LAYOUT) */
+        .soft-skills-container {
+            background-color: var(--light-gray);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .soft-skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .soft-skill-tag {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .soft-skill-tag::after {
+            content: "•";
+            margin-left: 10px;
+            color: #ccc;
+        }
+
+        .soft-skill-tag:last-child::after { content: ""; }
+
+        .tech-skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .skill-category h3 {
+            font-size: 15px;
+            color: var(--accent);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .skill-category p { font-size: 14px; margin: 0; }
+
+        /* EXPERIÊNCIA */
+        .job-block { margin-bottom: 25px; }
         
         .job-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
         
         .job-title { font-weight: bold; font-size: 16px; color: #000; }
         .company { font-style: italic; color: var(--primary); }
-        .date { font-size: 14px; color: #666; font-weight: bold; }
+        .date { font-size: 14px; color: #666; font-weight: bold; white-space: nowrap; margin-left: 10px;}
         
         ul { list-style-type: disc; margin-left: 20px; }
         li { margin-bottom: 5px; font-size: 15px; }
 
-        /* SKILLS EM GRID */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-        }
-        .skill-category strong { color: var(--accent); }
-
-        /* RODAPÉ FLUTUANTE DISCRETO (FERRAMENTAS) */
+        /* RODAPÉ FLUTUANTE */
         .tools-footer {
             position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #f8f9fa;
-            border-top: 1px solid #e9ecef;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: center; /* Centraliza o conteúdo */
-            align-items: center;
-            gap: 30px;
-            font-size: 12px;
-            color: #6c757d;
-            z-index: 1000;
+            bottom: 0; left: 0; width: 100%;
+            background: #fff;
+            border-top: 1px solid #eee;
+            padding: 15px;
+            text-align: center;
             box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
         }
 
         .tools-btn {
-            background: none;
-            border: 1px solid #ced4da;
-            padding: 5px 15px;
-            border-radius: 4px;
-            cursor: pointer;
-            color: #495057;
-            font-size: 12px;
-            transition: all 0.2s;
-            text-decoration: none;
-        }
-
-        .tools-btn:hover {
             background: var(--primary);
             color: white;
-            border-color: var(--primary);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .visitor-counter {
-            font-family: monospace;
-            background: #e9ecef;
-            padding: 4px 8px;
-            border-radius: 4px;
-        }
-
-        /* IMPRESSÃO (ESCONDE O QUE NÃO É CURRÍCULO) */
         @media print {
             body { padding: 0; max-width: 100%; }
-            a { text-decoration: none; color: #000; }
             .no-print { display: none !important; }
-            /* Garante que links mostrem o texto limpo */
-            a[href]:after { content: none !important; }
+            .soft-skills-container { background-color: #fff; border: 1px solid #ddd; }
+            a { text-decoration: none; color: #000; }
         }
     </style>
 </head>
@@ -156,25 +175,42 @@
         <h2>Resumo Profissional</h2>
         <p>
             Profissional multidisciplinar graduanda em Sistemas de Informação, atuando na intersecção entre Negócios, Design e Tecnologia. 
-            Minha experiência como Product Owner é sustentada por competências práticas em prototipagem (Figma) e desenvolvimento web (React/Python), permitindo uma visão holística do produto.
-            Versátil e adaptável, busco oportunidades para aplicar metodologias ágeis e visão analítica no desenvolvimento de soluções digitais.
+            Minha experiência como Product Owner é sustentada por competências práticas em prototipagem (Figma) e desenvolvimento web, permitindo uma visão holística do produto.
+            Versátil e proativa, busco oportunidades para aplicar metodologias ágeis e liderança colaborativa no desenvolvimento de soluções digitais.
         </p>
     </section>
 
     <section>
-        <h2>Competências Técnicas</h2>
-        <div class="skills-grid">
+        <h2>Competências e Habilidades</h2>
+
+        <div class="soft-skills-container">
+            <ul class="soft-skills-list">
+                <li class="soft-skill-tag">Liderança Colaborativa</li>
+                <li class="soft-skill-tag">Comunicação Assertiva</li>
+                <li class="soft-skill-tag">Proatividade</li>
+                <li class="soft-skill-tag">Trabalho em Equipe</li>
+                <li class="soft-skill-tag">Organização</li>
+                <li class="soft-skill-tag">Flexibilidade</li>
+                <li class="soft-skill-tag">Resolução de Problemas</li>
+            </ul>
+        </div>
+
+        <div class="tech-skills-grid">
             <div class="skill-category">
-                <strong>Gestão & Agilidade:</strong> Product Ownership, Scrum, Kanban, Jira, Trello, Gestão de Backlog, User Stories, Roadmapping.
+                <h3>Gestão & Agilidade</h3>
+                <p>Product Ownership, Scrum, Kanban, Jira, Trello, Gestão de Backlog, User Stories, Roadmapping.</p>
             </div>
             <div class="skill-category">
-                <strong>Design & UX:</strong> Figma (Prototipagem Avançada), Wireframing, User Research, Design Thinking.
+                <h3>Design & UX</h3>
+                <p>Figma (Prototipagem), Wireframing, User Research, Design Thinking.</p>
             </div>
             <div class="skill-category">
-                <strong>Desenvolvimento:</strong> React.js, JavaScript (ES6+), HTML5, CSS3, Git/GitHub, Python (Selenium).
+                <h3>Desenvolvimento Web</h3>
+                <p>React.js, JavaScript (ES6+), HTML5, CSS3, Git/GitHub, Python (Selenium).</p>
             </div>
             <div class="skill-category">
-                <strong>Dados:</strong> Power BI, Google Analytics, Excel Avançado, Métricas de Produto (KPIs).
+                <h3>Dados & Analytics</h3>
+                <p>Power BI, Google Analytics, Excel Avançado, Métricas de Produto (KPIs).</p>
             </div>
         </div>
     </section>
@@ -188,7 +224,7 @@
                 <span class="date">Mai 2025 - Presente</span>
             </div>
             <ul>
-                <li>Liderança do ciclo de vida do produto de plataforma ambiental, integrando pesquisadores e devs.</li>
+                <li>Liderança do ciclo de vida do produto de plataforma ambiental, integrando pesquisadores e desenvolvedores.</li>
                 <li>Prototipagem de alta fidelidade no <strong>Figma</strong> e mapeamento de jornada do usuário.</li>
                 <li>Gestão de backlog e sprints (Scrum), garantindo entregas alinhadas aos editais de fomento.</li>
             </ul>
@@ -201,10 +237,8 @@
             </div>
             <ul>
                 <li>Desenvolvimento de solução digital para agricultura familiar com foco em acessibilidade.</li>
-                <li>Condução de discovery e validação de requisitos com stakeholders.</li>
-                <li>Elaboração de documentação técnica (PRD) para time de desenvolvimento.</li>
-                <li>Coordenação de projetos de melhoria contínua com foco em eficiência operacional.</li>
-                <li>Gestão de backlog e sprints (Scrum), garantindo entregas alinhadas aos editais de fomento.</li>
+                <li>Condução de discovery, validação de requisitos com stakeholders e elaboração de PRD.</li>
+                <li>Coordenação de melhorias contínuas focadas em eficiência operacional.</li>
             </ul>
         </div>
 
@@ -214,12 +248,9 @@
                 <span class="date">Fev 2024 - Ago 2025</span>
             </div>
             <ul>
-                <li>Gestão de equipe multidisciplinar (10+ pessoas) e otimização de processos.</li>
+                <li>Gestão de equipe multidisciplinar (10+ pessoas) com foco em otimização de processos.</li>
                 <li>Implementação de sistemas internos que reduziram tempo administrativo.</li>
-                <li>Condução de discovery e validação de requisitos com stakeholders.</li>
-                <li>Elaboração de documentação técnica (PRD) para time de desenvolvimento.</li>
-                <li>Coordenação de projetos de melhoria contínua com foco em eficiência operacional.</li>
-                <li>Gestão de backlog e sprints (Scrum), garantindo entregas alinhadas aos editais de fomento.</li>
+                <li>Comunicação direta com clientes para alinhamento de expectativas.</li>
             </ul>
         </div>
     </section>
@@ -232,11 +263,8 @@
                 <span class="date">2025</span>
             </div>
             <ul>
-                <li>Sistema de gestão de queijos para produtores artesanais (Projeto pré-incubado). Validação de MVP e modelo de negócio.</li>
-                <li>Condução de discovery e validação de requisitos com stakeholders.</li>
-                <li>Elaboração de documentação técnica (PRD) para time de desenvolvimento.</li>
-                <li>Coordenação de projetos de melhoria contínua com foco em eficiência operacional.</li>
-                <li>Gestão de backlog e sprints (Scrum), garantindo entregas alinhadas aos editais de fomento.</li>
+                <li>Sistema de gestão de queijos para produtores artesanais (Projeto pré-incubado).</li>
+                <li>Validação de MVP e modelo de negócio.</li>
             </ul>
         </div>
         <div class="job-block">
@@ -267,9 +295,8 @@
     </section>
 
     <div class="tools-footer no-print">
-
         <button onclick="window.print()" class="tools-btn">
-            🖨️ Baixar em PDF
+            🖨️ Salvar currículo em PDF
         </button>
     </div>
 
